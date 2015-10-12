@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="Common\DirectXHelper.h">
+      <Filter>Infrastructure\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\StepTimer.h">
+      <Filter>Infrastructure\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\DeviceResources.h">
+      <Filter>Infrastructure\Common</Filter>
+    </ClInclude>
+    <ClCompile Include="Common\DeviceResources.cpp">
+      <Filter>Infrastructure\Common</Filter>
+    </ClCompile>
+    <ClInclude Include="Content\Sample3DSceneRenderer.h">
+      <Filter>Infrastructure\Content</Filter>
+    </ClInclude>
+    <ClInclude Include="Content\ShaderStructures.h">
+      <Filter>Infrastructure\Content</Filter>
+    </ClInclude>
+    <ClCompile Include="Content\Sample3DSceneRenderer.cpp">
+      <Filter>Infrastructure\Content</Filter>
+    </ClCompile>
+    <FxCompile Include="Content\SamplePixelShader.hlsl">
+      <Filter>Infrastructure\Content</Filter>
+    </FxCompile>
+    <FxCompile Include="Content\SampleVertexShader.hlsl">
+      <Filter>Infrastructure\Content</Filter>
+    </FxCompile>
+    <Image Include="Assets\LockScreenLogo.scale-200.png">
+      <Filter>Infrastructure\Assets</Filter>
+    </Image>
+    <Image Include="Assets\SplashScreen.scale-200.png">
+      <Filter>Infrastructure\Assets</Filter>
+    </Image>
+    <Image Include="Assets\Square150x150Logo.scale-200.png">
+      <Filter>Infrastructure\Assets</Filter>
+    </Image>
+    <Image Include="Assets\Square44x44Logo.scale-200.png">
+      <Filter>Infrastructure\Assets</Filter>
+    </Image>
+    <Image Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+      <Filter>Infrastructure\Assets</Filter>
+    </Image>
+    <Image Include="Assets\Wide310x150Logo.scale-200.png">
+      <Filter>Infrastructure\Assets</Filter>
+    </Image>
+    <Filter Include="Infrastructure">
+      <UniqueIdentifier>{fd6e7389-b4c5-4afc-b6f4-ee65ad77120d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Infrastructure\Assets">
+      <UniqueIdentifier>5ac8145f-4099-45ca-9189-84f8fc39f651</UniqueIdentifier>
+      <Extensions>bmp;fbx;gif;jpg;jpeg;tga;tiff;tif;png</Extensions>
+    </Filter>
+    <Filter Include="Infrastructure\Common">
+      <UniqueIdentifier>0d74e83d-47b5-44cd-851c-ce9629c8e4d1</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Infrastructure\Content">
+      <UniqueIdentifier>e7bbab17-c36c-44f3-8745-81159d4abcdb</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="pch.h">
+      <Filter>Infrastructure\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="SBEditorMain.h">
+      <Filter>Infrastructure\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="Option.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Vec2.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Line.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="LineSegment.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Rect.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Polygon.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="BezierCurve.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Circle.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Ray.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Intersection.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Matrix3x3.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Shape.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="SpatialTree.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="App.xaml.cpp" />
+    <ClCompile Include="DirectXPage.xaml.cpp" />
+    <ClCompile Include="pch.cpp">
+      <Filter>Infrastructure\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="SBEditorMain.cpp">
+      <Filter>Infrastructure\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="BezierCurve.cpp">
+      <Filter>Base\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="Circle.cpp">
+      <Filter>Base\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="Intersection.cpp">
+      <Filter>Base\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="Line.cpp">
+      <Filter>Base\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="LineSegment.cpp">
+      <Filter>Base\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="Matrix3x3.cpp">
+      <Filter>Base\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="Polygon.cpp">
+      <Filter>Base\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="Ray.cpp">
+      <Filter>Base\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="Rect.cpp">
+      <Filter>Base\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="Shape.cpp">
+      <Filter>Base\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="SpatialTree.cpp">
+      <Filter>Base\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="Vec2.cpp">
+      <Filter>Base\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils.cpp">
+      <Filter>Common\SRC</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="App.xaml.h" />
+    <ClInclude Include="DirectXPage.xaml.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\StoreLogo.png">
+      <Filter>Infrastructure\Assets</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Infrastructure\Windows">
+      <UniqueIdentifier>{4ef677e5-53ce-4eae-b4df-de870def3a9b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{a97a442a-e7ec-4cd9-9d2c-f57313f80816}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base">
+      <UniqueIdentifier>{24bc5171-ca3a-46eb-b720-da82904ba9e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base\SRC">
+      <UniqueIdentifier>{3be725bc-abc4-4fb4-8f4f-9778282e8012}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\SRC">
+      <UniqueIdentifier>{61a9fe2a-87c9-4ec0-9204-693630ff5abf}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Filter>Infrastructure\Windows</Filter>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="DirectXPage.xaml">
+      <Filter>Infrastructure\Windows</Filter>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <Filter>Infrastructure\Windows</Filter>
+    </AppxManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SBEditor_TemporaryKey.pfx">
+      <Filter>Infrastructure\Windows</Filter>
+    </None>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Base">
+      <UniqueIdentifier>{8aefb469-8b3c-4ab4-9c0a-7efe797911b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{15a3f14b-bdf3-46ef-a1d8-68e101274801}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tests">
+      <UniqueIdentifier>{47b1ad2a-0459-41f9-b445-18e03df31f6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base\SRC">
+      <UniqueIdentifier>{0ea1f025-dfac-4e4f-a4a6-151f75547e4e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\SRC">
+      <UniqueIdentifier>{9a0fc3eb-c19e-47cd-a220-6c5acf658c7e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SBEditor\Option.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SBEditor\Utils.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SBEditor\BezierCurve.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SBEditor\Circle.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SBEditor\Intersection.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SBEditor\Line.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SBEditor\LineSegment.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SBEditor\Matrix3x3.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SBEditor\Polygon.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SBEditor\Ray.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SBEditor\Rect.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SBEditor\Shape.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SBEditor\SpatialTree.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SBEditor\Vec2.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="pch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Vec2Tests.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="Matrix3x3Tests.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="IntersectionTests.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="SpatialTreeTests.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SBEditor\BezierCurve.cpp">
+      <Filter>Base\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SBEditor\Circle.cpp">
+      <Filter>Base\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SBEditor\Intersection.cpp">
+      <Filter>Base\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SBEditor\Line.cpp">
+      <Filter>Base\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SBEditor\LineSegment.cpp">
+      <Filter>Base\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SBEditor\Matrix3x3.cpp">
+      <Filter>Base\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SBEditor\Polygon.cpp">
+      <Filter>Base\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SBEditor\Ray.cpp">
+      <Filter>Base\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SBEditor\Rect.cpp">
+      <Filter>Base\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SBEditor\Shape.cpp">
+      <Filter>Base\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SBEditor\SpatialTree.cpp">
+      <Filter>Base\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SBEditor\Vec2.cpp">
+      <Filter>Base\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SBEditor\Utils.cpp">
+      <Filter>Common\SRC</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
