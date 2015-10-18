@@ -107,6 +107,21 @@
     <ClInclude Include="SpatialTree.h">
       <Filter>Base</Filter>
     </ClInclude>
+    <ClInclude Include="BaseMesh.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Color.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexItemDescription.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="BasicVertex.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Mesh.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="App.xaml.cpp" />
@@ -156,6 +171,18 @@
     <ClCompile Include="Utils.cpp">
       <Filter>Common\SRC</Filter>
     </ClCompile>
+    <ClCompile Include="BaseMesh.cpp">
+      <Filter>Graphics\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="Color.cpp">
+      <Filter>Graphics\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="VertexItemDescription.cpp">
+      <Filter>Graphics\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="BasicVertex.cpp">
+      <Filter>Graphics\SRC</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="App.xaml.h" />
@@ -181,6 +208,12 @@
     </Filter>
     <Filter Include="Common\SRC">
       <UniqueIdentifier>{61a9fe2a-87c9-4ec0-9204-693630ff5abf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphics">
+      <UniqueIdentifier>{2163b5d6-7c71-45f2-9639-409d3f6493c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphics\SRC">
+      <UniqueIdentifier>{eeb30170-4f2a-450e-aeef-edf96f4c134f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

@@ -226,13 +226,17 @@
     <ClInclude Include="App.xaml.h">
       <DependentUpon>App.xaml</DependentUpon>
     </ClInclude>
+    <ClInclude Include="BaseMesh.h" />
+    <ClInclude Include="BasicVertex.h" />
     <ClInclude Include="BezierCurve.h" />
     <ClInclude Include="Circle.h" />
+    <ClInclude Include="Color.h" />
     <ClInclude Include="Common\DeviceResources.h" />
     <ClInclude Include="Intersection.h" />
     <ClInclude Include="Line.h" />
     <ClInclude Include="LineSegment.h" />
     <ClInclude Include="Matrix3x3.h" />
+    <ClInclude Include="Mesh.h" />
     <ClInclude Include="Option.h" />
     <ClInclude Include="Polygon.h" />
     <ClInclude Include="Ray.h" />
@@ -250,13 +254,17 @@
     <ClInclude Include="SpatialTree.h" />
     <ClInclude Include="Utils.h" />
     <ClInclude Include="Vec2.h" />
+    <ClInclude Include="VertexItemDescription.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="App.xaml.cpp">
       <DependentUpon>App.xaml</DependentUpon>
     </ClCompile>
+    <ClCompile Include="BaseMesh.cpp" />
+    <ClCompile Include="BasicVertex.cpp" />
     <ClCompile Include="BezierCurve.cpp" />
     <ClCompile Include="Circle.cpp" />
+    <ClCompile Include="Color.cpp" />
     <ClCompile Include="Common\DeviceResources.cpp" />
     <ClCompile Include="Intersection.cpp" />
     <ClCompile Include="Line.cpp" />
@@ -282,6 +290,7 @@
     <ClCompile Include="SpatialTree.cpp" />
     <ClCompile Include="Utils.cpp" />
     <ClCompile Include="Vec2.cpp" />
+    <ClCompile Include="VertexItemDescription.cpp" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">

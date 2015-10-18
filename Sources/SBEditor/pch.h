@@ -1,6 +1,7 @@
 ﻿#pragma once
 
 #define NOMINMAX
+#define _USE_MATH_DEFINES
 
 #include <wrl.h>
 #include <wrl/client.h>
