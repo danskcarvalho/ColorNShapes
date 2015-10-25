@@ -16,4 +16,9 @@ namespace DX
 		DirectX::XMFLOAT3 pos;
 		DirectX::XMFLOAT3 color;
 	};
+
+	// Used to send per-instance data to the vertex shader.
+	struct InstancePosition {
+		DirectX::XMFLOAT3 pos;
+	};
 }

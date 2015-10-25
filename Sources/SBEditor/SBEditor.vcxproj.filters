@@ -122,6 +122,18 @@
     <ClInclude Include="Mesh.h">
       <Filter>Graphics</Filter>
     </ClInclude>
+    <ClInclude Include="DXContext.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="DynamicBatcher.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="LayoutBuilder.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="PrimitiveTopology.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="App.xaml.cpp" />
@@ -181,6 +193,15 @@
       <Filter>Graphics\SRC</Filter>
     </ClCompile>
     <ClCompile Include="BasicVertex.cpp">
+      <Filter>Graphics\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="DXContext.cpp">
+      <Filter>Graphics\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="DynamicBatcher.cpp">
+      <Filter>Graphics\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="LayoutBuilder.cpp">
       <Filter>Graphics\SRC</Filter>
     </ClCompile>
   </ItemGroup>

@@ -15,9 +15,13 @@ namespace sb {
 		//Access
 		inline const uint32_t* IB() const { return m_indexBuffer; }
 		inline uint32_t* IB() { return m_indexBuffer; }
+		inline const void* rawVB() const { return m_vertexBuffer; }
+		inline void* rawVB() { return m_vertexBuffer; }
 		//Tests
 		inline bool hasIB() const { return m_indexBuffer != nullptr && m_indexBufferCount > 0;  }
 		inline bool hasVB() const { return m_vertexBuffer != nullptr && m_vertexBufferCount > 0; }
+		//Stride
+		inline size_t vertexByteStride() const { return m_vertexByteStride; }
 		//Size + Capacity
 		inline size_t VBCapacity() const { return m_vertexBufferCapacity; }
 		inline size_t IBCapacity() const { return m_indexBufferCapacity;  }
@@ -53,9 +57,6 @@ namespace sb {
 		BaseMesh& operator=(BaseMesh&& other);
 		//Fields
 		const size_t m_vertexByteStride;
-		//Access
-		inline const void* rawVB() const { return m_vertexBuffer; }
-		inline void* rawVB() { return m_vertexBuffer; }
 		//Append
 		void appendVertex(void* vertex);
 		//Copy

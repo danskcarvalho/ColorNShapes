@@ -10,6 +10,8 @@ namespace sb {
 	template<class _Vertex>
 	class Mesh : public BaseMesh {
 	public:
+		//Constexpr
+		static constexpr size_t VertexByteStride = sizeof(_Vertex);
 		//Typedefs
 		typedef _Vertex Vertex;
 
@@ -46,13 +48,37 @@ namespace sb {
 		}
 		//Merge
 		void merge(const Mesh& other) {
+			auto vb_start = VBCount();
 			if (other.hasVB())
 				copyVertexes(VBCount(), other.VB(), other.VBCount());
-			if (other.hasIB())
-				copyIndexes(IBCount(), other.IB(), other.IBCount());
+			if (hasIB() || other.hasIB()) {
+				if (!hasIB()) {
+					setIBCount(vb_start);
+					for (size_t i = 0; i < IBCount(); i++) {
+						IB()[i] = i;
+					}
+				}
+				if (other.hasIB()) {
+					auto ib_start = IBCount();
+					copyIndexes(IBCount(), other.IB(), other.IBCount());
+					for (size_t i = ib_start; i < IBCount(); i++) {
+						IB()[i] += vb_start;
+					}
+				}
+				else {
+					auto ib_start = IBCount();
+					setIBCount(IBCount() + other.VBCount());
+					for (size_t i = ib_start; i < IBCount(); i++) {
+						IB()[i] = i + vb_start;
+					}
+				}
+			}
 		}
 		//Description
 		virtual const VertexItemDescription* description() const override {
+			return Vertex::description();
+		}
+		static const VertexItemDescription* staticDescription() {
 			return Vertex::description();
 		}
 	};
