@@ -13,6 +13,7 @@ namespace sb {
 	class DXContext;
 	class LayoutBuilder;
 	class VertexItemDescription;
+	class StaticBatch;
 
 	enum class DrawFrequency {
 		Dynamic,
@@ -43,55 +44,57 @@ namespace sb {
 		inline void end() {
 			_end();
 		}
+		//Meshes
 		inline void beginMeshes(PrimitiveTopology topology) {
 			_beginMeshes(topology);
 		}
-		inline void drawMesh(const BaseMesh* mesh) {
-			_drawMesh(mesh);
+		inline void batchMesh(const BaseMesh* mesh) {
+			_batchMesh(mesh);
 		}
-		inline void drawMeshes(const BaseMesh* const* meshes, size_t count) {
-			_drawMeshes(meshes, count);
+		inline void batchMeshes(const BaseMesh* const* meshes, size_t count) {
+			_batchMeshes(meshes, count);
 		}
 		template<class Model>
-		inline void drawMeshes(const Model* const* meshes, size_t count) {
+		inline void batchMeshes(const Model* const* meshes, size_t count) {
 			for (size_t i = 0; i < count; i++) {
-				_drawMesh(meshes[i]);
+				_batchMesh(meshes[i]);
 			}
 		}
-		inline void drawMeshes(const std::vector<const BaseMesh*>& meshes) {
-			_drawMeshes(meshes);
+		inline void batchMeshes(const std::vector<const BaseMesh*>& meshes) {
+			_batchMeshes(meshes);
 		}
 		template<class Model>
-		inline void drawMeshes(const std::vector<const Model*>& meshes) {
+		inline void batchMeshes(const std::vector<const Model*>& meshes) {
 			for (size_t i = 0; i < meshes.size(); i++) {
-				_drawMesh(meshes[i]);
+				_batchMesh(meshes[i]);
 			}
 		}
 		inline void endMeshes() {
 			_endMeshes();
 		}
+		//Instances
 		inline void beginInstances(PrimitiveTopology topology, const BaseMesh* model) {
 			_beginInstances(topology, model);
 		}
-		inline void drawInstance(const BaseMesh* instance) {
-			_drawInstance(instance);
+		inline void batchInstance(const BaseMesh* instance) {
+			_batchInstance(instance);
 		}
-		inline void drawInstances(const BaseMesh* const* instances, size_t count) {
-			_drawInstances(instances, count);
+		inline void batchInstances(const BaseMesh* const* instances, size_t count) {
+			_batchInstances(instances, count);
 		}
 		template<class Model>
-		inline void drawInstances(const Model* const* instances, size_t count) {
+		inline void batchInstances(const Model* const* instances, size_t count) {
 			for (size_t i = 0; i < count; i++) {
-				drawInstance(instances[i]);
+				_batchInstance(instances[i]);
 			}
 		}
-		inline void drawInstances(const std::vector<const BaseMesh*>& instances) {
-			_drawInstances(instances);
+		inline void batchInstances(const std::vector<const BaseMesh*>& instances) {
+			_batchInstances(instances);
 		}
 		template<class Model>
-		inline void drawInstances(const std::vector<const Model*>& instances) {
+		inline void batchInstances(const std::vector<const Model*>& instances) {
 			for (size_t i = 0; i < instances.size(); i++) {
-				drawInstance(instances[i]);
+				_batchInstance(instances[i]);
 			}
 		}
 		inline void endInstances() {
@@ -99,6 +102,10 @@ namespace sb {
 		}
 		//Release All
 		void releaseAll();
+		//Drawing
+		void draw();
+		//Compile
+		StaticBatch* compile() const;
 	private:
 		void _begin(const VertexItemDescription* model, 
 					const VertexItemDescription* instance,
@@ -106,14 +113,14 @@ namespace sb {
 					size_t instanceVertexByteStride);
 		void _end();
 		void _beginMeshes(PrimitiveTopology topology);
-		void _drawMesh(const BaseMesh* mesh);
-		void _drawMeshes(const BaseMesh* const* meshes, size_t count);
-		void _drawMeshes(const std::vector<const BaseMesh*>& meshes);
+		void _batchMesh(const BaseMesh* mesh);
+		void _batchMeshes(const BaseMesh* const* meshes, size_t count);
+		void _batchMeshes(const std::vector<const BaseMesh*>& meshes);
 		void _endMeshes();
 		void _beginInstances(PrimitiveTopology topology, const BaseMesh* model);
-		void _drawInstance(const BaseMesh* instance);
-		void _drawInstances(const BaseMesh* const* instances, size_t count);
-		void _drawInstances(const std::vector<const BaseMesh*>& instances);
+		void _batchInstance(const BaseMesh* instance);
+		void _batchInstances(const BaseMesh* const* instances, size_t count);
+		void _batchInstances(const std::vector<const BaseMesh*>& instances);
 		void _endInstances();
 		void reallocDXBuffers(bool* modelBufferReallocated, bool* indexBufferReallocated, bool* instanceBufferReallocated);
 		void updateDXBuffers();
@@ -157,6 +164,9 @@ namespace sb {
 		size_t m_d3dInstSize; //in bytes
 		Microsoft::WRL::ComPtr<ID3D11Buffer> m_d3dIdx;
 		size_t m_d3dIdxSize; //in bytes
+
+		bool m_dirty;
+		bool m_started;
 	};
 }
 

@@ -256,6 +256,7 @@
     <ClInclude Include="pch.h" />
     <ClInclude Include="Shape.h" />
     <ClInclude Include="SpatialTree.h" />
+    <ClInclude Include="StaticBatch.h" />
     <ClInclude Include="Utils.h" />
     <ClInclude Include="Vec2.h" />
     <ClInclude Include="VertexItemDescription.h" />
@@ -295,6 +296,7 @@
     </ClCompile>
     <ClCompile Include="Shape.cpp" />
     <ClCompile Include="SpatialTree.cpp" />
+    <ClCompile Include="StaticBatch.cpp" />
     <ClCompile Include="Utils.cpp" />
     <ClCompile Include="Vec2.cpp" />
     <ClCompile Include="VertexItemDescription.cpp" />

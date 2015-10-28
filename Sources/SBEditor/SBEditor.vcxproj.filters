@@ -134,6 +134,9 @@
     <ClInclude Include="PrimitiveTopology.h">
       <Filter>Graphics</Filter>
     </ClInclude>
+    <ClInclude Include="StaticBatch.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="App.xaml.cpp" />
@@ -202,6 +205,9 @@
       <Filter>Graphics\SRC</Filter>
     </ClCompile>
     <ClCompile Include="LayoutBuilder.cpp">
+      <Filter>Graphics\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="StaticBatch.cpp">
       <Filter>Graphics\SRC</Filter>
     </ClCompile>
   </ItemGroup>
