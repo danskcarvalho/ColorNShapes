@@ -100,7 +100,8 @@ public:
 			m_delegate->log("images packed");
 			for (auto& t : packed) {
 				m_delegate->log("creating " + options.outputName + std::to_string(t.index) + "...");
-				m_delegate->beginImage(options.outputName + std::to_string(t.index), computeImageSize(options, t));
+				auto txSize = computeImageSize(options, t);
+				m_delegate->beginImage(options.outputName + std::to_string(t.index), txSize);
 				for (auto& i : t.packedImages) {
 					m_delegate->log("copying " + i.second.name + "...");
                     m_delegate->packImage(i.second, i.first, i.second.extrusion ? i.second.extrusion.value() : options.extrusion);
@@ -111,6 +112,9 @@ public:
 				//Generating Data
 				m_delegate->log("creating " + options.outputName + std::to_string(t.index) + ".txt...");
 				m_delegate->beginOutputTextFile(options.outputName + std::to_string(t.index) + ".txt");
+				m_delegate->writeLine("@@TX_SELF:0:0:" +
+									  std::to_string((int)txSize.width()) + ":" +
+									  std::to_string((int)txSize.height()));
 				for (auto& i : t.packedImages) {
 					m_delegate->writeLine(i.second.name + ":" + 
 										  std::to_string((int)i.first.left()) + ":" + 
@@ -309,7 +313,7 @@ private:
 			return;
 		}
 		std::vector<std::string> lines;
-		boost::split(lines, optionFile.value(), boost::is_any_of("\n"));
+		boost::split(lines, optionFile.value(), boost::is_any_of("\n"), boost::token_compress_on);
 		for (auto& l : lines)
 			setOption(options, l);
 	}

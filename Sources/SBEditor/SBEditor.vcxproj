@@ -139,7 +139,7 @@
       <PrecompiledHeaderOutputFile>$(IntDir)pch.pch</PrecompiledHeaderOutputFile>
       <AdditionalIncludeDirectories>$(ProjectDir);$(IntermediateOutputPath);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
-      <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4453;28204;4996</DisableSpecificWarnings>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
@@ -153,7 +153,7 @@
       <PrecompiledHeaderOutputFile>$(IntDir)pch.pch</PrecompiledHeaderOutputFile>
       <AdditionalIncludeDirectories>$(ProjectDir);$(IntermediateOutputPath);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
-      <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4453;28204;4996</DisableSpecificWarnings>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
@@ -167,7 +167,7 @@
       <PrecompiledHeaderOutputFile>$(IntDir)pch.pch</PrecompiledHeaderOutputFile>
       <AdditionalIncludeDirectories>$(ProjectDir);$(IntermediateOutputPath);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
-      <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4453;28204;4996</DisableSpecificWarnings>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
@@ -181,7 +181,7 @@
       <PrecompiledHeaderOutputFile>$(IntDir)pch.pch</PrecompiledHeaderOutputFile>
       <AdditionalIncludeDirectories>$(ProjectDir);$(IntermediateOutputPath);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
-      <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4453;28204;4996</DisableSpecificWarnings>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
@@ -195,7 +195,7 @@
       <PrecompiledHeaderOutputFile>$(IntDir)pch.pch</PrecompiledHeaderOutputFile>
       <AdditionalIncludeDirectories>$(ProjectDir);$(IntermediateOutputPath);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
-      <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4453;28204;4996</DisableSpecificWarnings>
       <PreprocessorDefinitions>_64BITS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
@@ -209,7 +209,7 @@
       <PrecompiledHeaderOutputFile>$(IntDir)pch.pch</PrecompiledHeaderOutputFile>
       <AdditionalIncludeDirectories>$(ProjectDir);$(IntermediateOutputPath);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
-      <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4453;28204;4996</DisableSpecificWarnings>
       <PreprocessorDefinitions>_64BITS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
@@ -229,6 +229,8 @@
     <ClInclude Include="BaseMesh.h" />
     <ClInclude Include="BasicVertex.h" />
     <ClInclude Include="BezierCurve.h" />
+    <ClInclude Include="BundleLoader.h" />
+    <ClInclude Include="BundleManager.h" />
     <ClInclude Include="Circle.h" />
     <ClInclude Include="Color.h" />
     <ClInclude Include="Common\DeviceResources.h" />
@@ -245,6 +247,7 @@
     <ClInclude Include="PrimitiveTopology.h" />
     <ClInclude Include="Ray.h" />
     <ClInclude Include="Rect.h" />
+    <ClInclude Include="ResourceLoader.h" />
     <ClInclude Include="SBEditorMain.h" />
     <ClInclude Include="DirectXPage.xaml.h">
       <DependentUpon>DirectXPage.xaml</DependentUpon>
@@ -254,12 +257,17 @@
     <ClInclude Include="Content\Sample3DSceneRenderer.h" />
     <ClInclude Include="Content\ShaderStructures.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="ShaderLoader.h" />
     <ClInclude Include="Shape.h" />
     <ClInclude Include="SpatialTree.h" />
     <ClInclude Include="StaticBatch.h" />
+    <ClInclude Include="TextureAtlas.h" />
+    <ClInclude Include="TextureAtlasLoader.h" />
+    <ClInclude Include="TextureLoader.h" />
     <ClInclude Include="Utils.h" />
     <ClInclude Include="Vec2.h" />
     <ClInclude Include="VertexItemDescription.h" />
+    <ClInclude Include="WICTextureLoader.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="App.xaml.cpp">
@@ -268,6 +276,8 @@
     <ClCompile Include="BaseMesh.cpp" />
     <ClCompile Include="BasicVertex.cpp" />
     <ClCompile Include="BezierCurve.cpp" />
+    <ClCompile Include="BundleLoader.cpp" />
+    <ClCompile Include="BundleManager.cpp" />
     <ClCompile Include="Circle.cpp" />
     <ClCompile Include="Color.cpp" />
     <ClCompile Include="Common\DeviceResources.cpp" />
@@ -281,6 +291,7 @@
     <ClCompile Include="Polygon.cpp" />
     <ClCompile Include="Ray.cpp" />
     <ClCompile Include="Rect.cpp" />
+    <ClCompile Include="ResourceLoader.cpp" />
     <ClCompile Include="SBEditorMain.cpp" />
     <ClCompile Include="DirectXPage.xaml.cpp">
       <DependentUpon>DirectXPage.xaml</DependentUpon>
@@ -294,12 +305,17 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="ShaderLoader.cpp" />
     <ClCompile Include="Shape.cpp" />
     <ClCompile Include="SpatialTree.cpp" />
     <ClCompile Include="StaticBatch.cpp" />
+    <ClCompile Include="TextureAtlas.cpp" />
+    <ClCompile Include="TextureAtlasLoader.cpp" />
+    <ClCompile Include="TextureLoader.cpp" />
     <ClCompile Include="Utils.cpp" />
     <ClCompile Include="Vec2.cpp" />
     <ClCompile Include="VertexItemDescription.cpp" />
+    <ClCompile Include="WICTextureLoader.cpp" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">

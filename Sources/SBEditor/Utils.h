@@ -12,6 +12,9 @@
 #define SbToRadians(x) (((float)(x) / 180.0f) * (float)SbPI)
 
 namespace sb {
+	std::wstring fromString(const std::string& str);
+	std::string toString(const std::wstring& str);
+
 	inline bool aeq(float n1, float n2) {
 		if (fabsf(n2 - n1) <= SbEpsilon)
 			return true;

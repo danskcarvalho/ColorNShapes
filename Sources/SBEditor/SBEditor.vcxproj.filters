@@ -137,6 +137,30 @@
     <ClInclude Include="StaticBatch.h">
       <Filter>Graphics</Filter>
     </ClInclude>
+    <ClInclude Include="WICTextureLoader.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureLoader.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceLoader.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderLoader.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureAtlasLoader.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="BundleLoader.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="BundleManager.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureAtlas.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="App.xaml.cpp" />
@@ -208,6 +232,30 @@
       <Filter>Graphics\SRC</Filter>
     </ClCompile>
     <ClCompile Include="StaticBatch.cpp">
+      <Filter>Graphics\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="WICTextureLoader.cpp">
+      <Filter>Graphics\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureLoader.cpp">
+      <Filter>Graphics\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceLoader.cpp">
+      <Filter>Graphics\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderLoader.cpp">
+      <Filter>Graphics\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureAtlasLoader.cpp">
+      <Filter>Graphics\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="BundleLoader.cpp">
+      <Filter>Graphics\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="BundleManager.cpp">
+      <Filter>Graphics\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureAtlas.cpp">
       <Filter>Graphics\SRC</Filter>
     </ClCompile>
   </ItemGroup>
