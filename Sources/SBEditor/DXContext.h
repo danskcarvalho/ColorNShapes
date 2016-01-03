@@ -10,7 +10,9 @@ namespace sb {
 	public:
 		virtual ID3D11Device2* device() const = 0;
 		virtual ID3D11DeviceContext2* deviceContext() const = 0;
+		virtual void restoreDefaultRenderTarget() = 0;
 		virtual const std::vector<byte>& currentShaderBytecode() const = 0;
+		virtual void setCurrentShaderBytecode(const std::vector<byte>& bytecode) = 0;
 		virtual ~DXContext();
 	};
 }

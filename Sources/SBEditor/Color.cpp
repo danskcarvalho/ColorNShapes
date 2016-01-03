@@ -10,7 +10,7 @@ You can't use, distribute or modify this code without my permission.
 
 using namespace sb;
 
-void color::_fromHSL(const float h, const float s, const float l) {
+void Color::_fromHSL(const float h, const float s, const float l) {
 	float _h = h;
 	float _s = s;
 	float _l = l;
@@ -77,7 +77,7 @@ void color::_fromHSL(const float h, const float s, const float l) {
 	this->m_g = _g + m;
 	this->m_b = _b + m;
 }
-void color::_fromHSV(const float h, const float s, const float v) {
+void Color::_fromHSV(const float h, const float s, const float v) {
 	float _h = h;
 	float _s = s;
 	float _v
@@ -146,12 +146,12 @@ void color::_fromHSV(const float h, const float s, const float v) {
 	this->m_b = _b + m;
 }
 
-color::color() {
+Color::Color() {
 	m_r = m_g = m_b = m_a = 0.0f;
 	m_premultiplied = false;
 }
-color color::fromRGB(const float r, const float g, const float b) {
-	color _c;
+Color Color::fromRGB(const float r, const float g, const float b) {
+	Color _c;
 
 	_c.m_r = r;
 	_c.m_g = g;
@@ -161,8 +161,8 @@ color color::fromRGB(const float r, const float g, const float b) {
 
 	return _c;
 }
-color color::fromRGBA(const float r, const float g, const float b, const float a) {
-	color _c;
+Color Color::fromRGBA(const float r, const float g, const float b, const float a) {
+	Color _c;
 
 	_c.m_r = r;
 	_c.m_g = g;
@@ -172,13 +172,13 @@ color color::fromRGBA(const float r, const float g, const float b, const float a
 
 	return _c;
 }
-color color::fromPackedRGBA(uint32_t rgba) {
+Color Color::fromPackedRGBA(uint32_t rgba) {
 	uint8_t r = (rgba & 0xFF000000) >> 24;
 	uint8_t g = (rgba & 0x00FF0000) >> 16;
 	uint8_t b = (rgba & 0x0000FF00) >> 8;
 	uint8_t a = (rgba & 0x000000FF);
 
-	color _c;
+	Color _c;
 	_c.m_r = (float)r / 255.0f;
 	_c.m_g = (float)g / 255.0f;
 	_c.m_b = (float)b / 255.0f;
@@ -186,34 +186,34 @@ color color::fromPackedRGBA(uint32_t rgba) {
 	_c.m_premultiplied = false;
 	return _c;
 }
-color color::fromHSL(const float h, const float s, const float l) {
-	color _c;
+Color Color::fromHSL(const float h, const float s, const float l) {
+	Color _c;
 	_c._fromHSL(h, s, l);
 	_c.m_premultiplied = false;
 	return _c;
 }
-color color::fromHSLA(const float h, const float s, const float l, const float a) {
-	color _c;
+Color Color::fromHSLA(const float h, const float s, const float l, const float a) {
+	Color _c;
 	_c._fromHSL(h, s, l);
 	_c.m_premultiplied = false;
 	_c.m_a = a;
 	return _c;
 }
-color color::fromHSV(const float h, const float s, const float v) {
-	color _c;
+Color Color::fromHSV(const float h, const float s, const float v) {
+	Color _c;
 	_c._fromHSV(h, s, v);
 	_c.m_premultiplied = false;
 	return _c;
 }
-color color::fromHSVA(const float h, const float s, const float v, const float a) {
-	color _c;
+Color Color::fromHSVA(const float h, const float s, const float v, const float a) {
+	Color _c;
 	_c._fromHSV(h, s, v);
 	_c.m_premultiplied = false;
 	_c.m_a = a;
 	return _c;
 }
 
-float color::h() const {
+float Color::h() const {
 	float as = 0.5f * (2 * m_r - m_g - m_b);
 	float bs = 0.5f * (sqrtf(3) * (m_g - m_b));
 	float h = atan2f(bs, as);
@@ -223,7 +223,7 @@ float color::h() const {
 
 	return h;
 }
-float color::sl() const {
+float Color::sl() const {
 	auto M = fmaxf(fmaxf(m_r, m_g), m_b);
 	auto m = fminf(fminf(m_r, m_g), m_b);
 	float c = M - m;
@@ -234,7 +234,7 @@ float color::sl() const {
 		return c / (1 - fabsf(2 * _l - 1));
 	}
 }
-float color::sv() const {
+float Color::sv() const {
 	auto M = fmaxf(fmaxf(m_r, m_g), m_b);
 	auto m = fminf(fminf(m_r, m_g), m_b);
 	float c = M - m;
@@ -245,15 +245,15 @@ float color::sv() const {
 		return c / _v;
 	}
 }
-float color::l() const {
+float Color::l() const {
 	auto M = fmaxf(fmaxf(m_r, m_g), m_b);
 	auto m = fminf(fminf(m_r, m_g), m_b);
 	return 0.5f * (M + m);
 }
-float color::v() const {
+float Color::v() const {
 	return fmaxf(fmaxf(m_r, m_g), m_b);
 }
-uint32_t color::packedRGBA() const {
+uint32_t Color::packedRGBA() const {
 	auto _pr = (int32_t)(m_r * 255.0f) & 0xFF;
 	auto _pg = (int32_t)(m_g * 255.0f) & 0xFF;
 	auto _pb = (int32_t)(m_b * 255.0f) & 0xFF;
@@ -261,7 +261,7 @@ uint32_t color::packedRGBA() const {
 	return (_pr << 0) | (_pg << 8) | (_pb << 16) | (_pa << 24);
 }
 
-void color::snap() {
+void Color::snap() {
 	if (aeq(m_r, 0))
 		m_r = 0;
 	if (aeq(m_r, 1))
@@ -283,7 +283,7 @@ void color::snap() {
 		m_a = 1;
 }
 
-void color::clamp() {
+void Color::clamp() {
 	if (m_r <= 0)
 		m_r = 0;
 	else if (m_r >= 1)
@@ -305,25 +305,25 @@ void color::clamp() {
 		m_a = 1;
 }
 
-color color::clamped() const {
-	color _c = *this;
+Color Color::clamped() const {
+	Color _c = *this;
 	_c.clamp();
 	return _c;
 }
 
-color color::lerp(const float f, const color& c1, const color& c2) {
+Color Color::lerp(const float f, const Color& c1, const Color& c2) {
 	return (1 - f) * c1 + f * c2;
 }
 
-color color::preMultiplied() const {
+Color Color::preMultiplied() const {
 	if (m_premultiplied)
 		return *this;
 
-	auto c = color::fromRGBA(m_r * m_a, m_g * m_a, m_b * m_a, m_a);
+	auto c = Color::fromRGBA(m_r * m_a, m_g * m_a, m_b * m_a, m_a);
 	c.m_premultiplied = true;
 	return c;
 }
-void color::preMultiply() {
+void Color::preMultiply() {
 	if (m_premultiplied)
 		return;
 
@@ -332,7 +332,7 @@ void color::preMultiply() {
 	m_b *= m_a;
 	m_premultiplied = true;
 }
-color color::nonPreMultiplied() const {
+Color Color::nonPreMultiplied() const {
 	if (!m_premultiplied)
 		return *this;
 
@@ -350,7 +350,7 @@ color color::nonPreMultiplied() const {
 		return _c;
 	}
 }
-void color::revertPreMultiply() {
+void Color::revertPreMultiply() {
 	if (!m_premultiplied)
 		return;
 
@@ -365,57 +365,57 @@ void color::revertPreMultiply() {
 	}
 }
 
-std::string color::toString() const {
+std::string Color::toString() const {
 	return std::string("(") + std::to_string(m_r) + std::string(", ") + std::to_string(m_g) + std::string(", ") + std::to_string(m_b) + std::string(", ") + std::to_string(m_a) + std::string(")");
 }
 
-color& color::operator +=(const color& c2) {
+Color& Color::operator +=(const Color& c2) {
 	m_r += c2.m_r;
 	m_g += c2.m_g;
 	m_b += c2.m_b;
 	m_a += c2.m_a;
 	return *this;
 }
-color& color::operator -=(const color& c2) {
+Color& Color::operator -=(const Color& c2) {
 	m_r -= c2.m_r;
 	m_g -= c2.m_g;
 	m_b -= c2.m_b;
 	m_a -= c2.m_a;
 	return *this;
 }
-color& color::operator *=(const color& c2) {
+Color& Color::operator *=(const Color& c2) {
 	m_r *= c2.m_r;
 	m_g *= c2.m_g;
 	m_b *= c2.m_b;
 	m_a *= c2.m_a;
 	return *this;
 }
-color& color::operator /=(const color& c2) {
+Color& Color::operator /=(const Color& c2) {
 	m_r /= c2.m_r;
 	m_g /= c2.m_g;
 	m_b /= c2.m_b;
 	m_a /= c2.m_a;
 	return *this;
 }
-color& color::operator *=(const float t) {
+Color& Color::operator *=(const float t) {
 	m_r *= t;
 	m_g *= t;
 	m_b *= t;
 	m_a *= t;
 	return *this;
 }
-color& color::operator /=(const float t) {
+Color& Color::operator /=(const float t) {
 	m_r /= t;
 	m_g /= t;
 	m_b /= t;
 	m_a /= t;
 	return *this;
 }
-bool sb::operator ==(const color& c1, const color& c2) {
+bool sb::operator ==(const Color& c1, const Color& c2) {
 	return (c1.m_r == c2.m_r) && (c1.m_g == c2.m_g) && (c1.m_b == c2.m_b) && (c1.m_a == c2.m_a);
 }
 
-bool sb::operator <(const color& c1, const color& c2) {
+bool sb::operator <(const Color& c1, const Color& c2) {
 	if (c1.m_r == c2.m_r) {
 		if (c1.m_g == c2.m_g) {
 			if (c1.m_b == c2.m_b) {
@@ -431,7 +431,7 @@ bool sb::operator <(const color& c1, const color& c2) {
 		return c1.m_r < c2.m_r;
 }
 
-bool sb::operator >(const color& c1, const color& c2) {
+bool sb::operator >(const Color& c1, const Color& c2) {
 	if (c1.m_r == c2.m_r) {
 		if (c1.m_g == c2.m_g) {
 			if (c1.m_b == c2.m_b) {
@@ -447,7 +447,7 @@ bool sb::operator >(const color& c1, const color& c2) {
 		return c1.m_r > c2.m_r;
 }
 
-bool sb::operator <=(const color& c1, const color& c2) {
+bool sb::operator <=(const Color& c1, const Color& c2) {
 	if (c1 == c2)
 		return true;
 
@@ -466,7 +466,7 @@ bool sb::operator <=(const color& c1, const color& c2) {
 		return c1.m_r < c2.m_r;
 }
 
-bool sb::operator >=(const color& c1, const color& c2) {
+bool sb::operator >=(const Color& c1, const Color& c2) {
 	if (c1 == c2)
 		return true;
 
@@ -485,49 +485,49 @@ bool sb::operator >=(const color& c1, const color& c2) {
 		return c1.m_r > c2.m_r;
 }
 
-bool sb::operator !=(const color& c1, const color& c2) {
+bool sb::operator !=(const Color& c1, const Color& c2) {
 	return (c1.m_r != c2.m_r) || (c1.m_g != c2.m_g) || (c1.m_b != c2.m_b) || (c1.m_a != c2.m_a);
 }
 
-bool sb::aeq(const sb::color &c1, const sb::color &c2) {
+bool sb::aeq(const sb::Color &c1, const sb::Color &c2) {
 	return aeq(c1.m_r, c2.m_r) && aeq(c1.m_b, c2.m_b) && aeq(c1.m_g, c2.m_g) && aeq(c1.m_a, c2.m_a);
 }
 
-color sb::operator +(const color& c1, const color& c2) {
-	color _c = c1;
+Color sb::operator +(const Color& c1, const Color& c2) {
+	Color _c = c1;
 	_c += c2;
 	return _c;
 }
-color sb::operator -(const color& c1, const color& c2) {
-	color _c = c1;
+Color sb::operator -(const Color& c1, const Color& c2) {
+	Color _c = c1;
 	_c -= c2;
 	return _c;
 }
-color sb::operator *(const color& c1, const color& c2) {
-	color _c = c1;
+Color sb::operator *(const Color& c1, const Color& c2) {
+	Color _c = c1;
 	_c *= c2;
 	return _c;
 }
-color sb::operator /(const color& c1, const color& c2) {
-	color _c = c1;
+Color sb::operator /(const Color& c1, const Color& c2) {
+	Color _c = c1;
 	_c /= c2;
 	return _c;
 }
-color sb::operator *(const color& c1, const float t) {
-	color _c = c1;
+Color sb::operator *(const Color& c1, const float t) {
+	Color _c = c1;
 	_c *= t;
 	return _c;
 }
-color sb::operator *(const float t, const color& c2) {
-	color _c = c2;
+Color sb::operator *(const float t, const Color& c2) {
+	Color _c = c2;
 	_c *= t;
 	return _c;
 }
-color sb::operator /(const color& c1, const float t) {
-	color _c = c1;
+Color sb::operator /(const Color& c1, const float t) {
+	Color _c = c1;
 	_c /= t;
 	return _c;
 }
-color sb::operator -(const color& c1) {
-	return color::fromRGBA(-c1.m_r, -c1.m_g, -c1.m_b, -c1.m_a);
+Color sb::operator -(const Color& c1) {
+	return Color::fromRGBA(-c1.m_r, -c1.m_g, -c1.m_b, -c1.m_a);
 }

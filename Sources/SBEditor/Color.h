@@ -6,20 +6,20 @@ You can't use, distribute or modify this code without my permission.
 #pragma once
 
 namespace sb {
-	class color {
+	class Color {
 	public:
-		color();
+		Color();
 		//builder methods
-		static color fromRGB(const float r, const float g, const float b);
-		static color fromRGBA(const float r, const float g, const float b, const float a);
-		static color fromPackedRGBA(uint32_t rgba);
-		static color fromHSL(const float h, const float s, const float l);
-		static color fromHSLA(const float h, const float s, const float l, const float a);
-		static color fromHSV(const float h, const float s, const float v);
-		static color fromHSVA(const float h, const float s, const float v, const float a);
+		static Color fromRGB(const float r, const float g, const float b);
+		static Color fromRGBA(const float r, const float g, const float b, const float a);
+		static Color fromPackedRGBA(uint32_t rgba);
+		static Color fromHSL(const float h, const float s, const float l);
+		static Color fromHSLA(const float h, const float s, const float l, const float a);
+		static Color fromHSV(const float h, const float s, const float v);
+		static Color fromHSVA(const float h, const float s, const float v, const float a);
 
 		//inline properties
-		inline color rbg() const {
+		inline Color rbg() const {
 			return fromRGB(r(), g(), b());
 		}
 		inline float r() const {
@@ -60,40 +60,40 @@ namespace sb {
 		//operations
 		void snap();
 		void clamp();
-		color clamped() const;
-		static color lerp(const float f, const color& c1, const color& c2);
-		color preMultiplied() const;
+		Color clamped() const;
+		static Color lerp(const float f, const Color& c1, const Color& c2);
+		Color preMultiplied() const;
 		void preMultiply();
-		color nonPreMultiplied() const;
+		Color nonPreMultiplied() const;
 		void revertPreMultiply();
 
 		//to_string
 		std::string toString() const;
 
 		//operators
-		color& operator +=(const color&);
-		color& operator -=(const color&);
-		color& operator *=(const color&);
-		color& operator /=(const color&);
-		color& operator *=(const float);
-		color& operator /=(const float);
+		Color& operator +=(const Color&);
+		Color& operator -=(const Color&);
+		Color& operator *=(const Color&);
+		Color& operator /=(const Color&);
+		Color& operator *=(const float);
+		Color& operator /=(const float);
 
-		friend bool aeq(const color&, const color&);
-		friend bool operator ==(const color&, const color&);
-		friend bool operator !=(const color&, const color&);
-		friend bool operator <(const color&, const color&);
-		friend bool operator >(const color&, const color&);
-		friend bool operator <=(const color&, const color&);
-		friend bool operator >=(const color&, const color&);
-		friend bool exact_match(const color&, const color&);
-		friend color operator +(const color&, const color&);
-		friend color operator -(const color&, const color&);
-		friend color operator *(const color&, const color&);
-		friend color operator /(const color&, const color&);
-		friend color operator *(const color&, const float);
-		friend color operator *(const float, const color&);
-		friend color operator /(const color&, const float);
-		friend color operator -(const color&);
+		friend bool aeq(const Color&, const Color&);
+		friend bool operator ==(const Color&, const Color&);
+		friend bool operator !=(const Color&, const Color&);
+		friend bool operator <(const Color&, const Color&);
+		friend bool operator >(const Color&, const Color&);
+		friend bool operator <=(const Color&, const Color&);
+		friend bool operator >=(const Color&, const Color&);
+		friend bool exact_match(const Color&, const Color&);
+		friend Color operator +(const Color&, const Color&);
+		friend Color operator -(const Color&, const Color&);
+		friend Color operator *(const Color&, const Color&);
+		friend Color operator /(const Color&, const Color&);
+		friend Color operator *(const Color&, const float);
+		friend Color operator *(const float, const Color&);
+		friend Color operator /(const Color&, const float);
+		friend Color operator -(const Color&);
 	private:
 		float m_r, m_g, m_b, m_a;
 		bool m_premultiplied;
@@ -102,20 +102,20 @@ namespace sb {
 		void _fromHSV(const float h, const float s, const float v);
 	};
 
-	bool aeq(const color&, const color&);
-	bool operator ==(const color&, const color&);
-	bool operator !=(const color&, const color&);
-	bool operator <(const color&, const color&);
-	bool operator >(const color&, const color&);
-	bool operator <=(const color&, const color&);
-	bool operator >=(const color&, const color&);
-	color operator +(const color&, const color&);
-	color operator -(const color&, const color&);
-	color operator *(const color&, const color&);
-	color operator /(const color&, const color&);
-	color operator *(const color&, const float);
-	color operator *(const float, const color&);
-	color operator /(const color&, const float);
-	color operator -(const color&);
+	bool aeq(const Color&, const Color&);
+	bool operator ==(const Color&, const Color&);
+	bool operator !=(const Color&, const Color&);
+	bool operator <(const Color&, const Color&);
+	bool operator >(const Color&, const Color&);
+	bool operator <=(const Color&, const Color&);
+	bool operator >=(const Color&, const Color&);
+	Color operator +(const Color&, const Color&);
+	Color operator -(const Color&, const Color&);
+	Color operator *(const Color&, const Color&);
+	Color operator /(const Color&, const Color&);
+	Color operator *(const Color&, const float);
+	Color operator *(const float, const Color&);
+	Color operator /(const Color&, const float);
+	Color operator -(const Color&);
 }
 

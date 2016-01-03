@@ -229,25 +229,32 @@
     <ClInclude Include="BaseMesh.h" />
     <ClInclude Include="BasicVertex.h" />
     <ClInclude Include="BezierCurve.h" />
+    <ClInclude Include="BlendStateCache.h" />
     <ClInclude Include="BundleLoader.h" />
     <ClInclude Include="BundleManager.h" />
     <ClInclude Include="Circle.h" />
     <ClInclude Include="Color.h" />
     <ClInclude Include="Common\DeviceResources.h" />
+    <ClInclude Include="ConstantBufferCache.h" />
+    <ClInclude Include="DirectXHelpers.h" />
     <ClInclude Include="DXContext.h" />
     <ClInclude Include="DynamicBatcher.h" />
     <ClInclude Include="Intersection.h" />
     <ClInclude Include="LayoutBuilder.h" />
     <ClInclude Include="Line.h" />
+    <ClInclude Include="LinearCache.h" />
     <ClInclude Include="LineSegment.h" />
     <ClInclude Include="Matrix3x3.h" />
     <ClInclude Include="Mesh.h" />
     <ClInclude Include="Option.h" />
+    <ClInclude Include="PlatformHelpers.h" />
     <ClInclude Include="Polygon.h" />
     <ClInclude Include="PrimitiveTopology.h" />
     <ClInclude Include="Ray.h" />
     <ClInclude Include="Rect.h" />
+    <ClInclude Include="RenderTargetCache.h" />
     <ClInclude Include="ResourceLoader.h" />
+    <ClInclude Include="SamplerCache.h" />
     <ClInclude Include="SBEditorMain.h" />
     <ClInclude Include="DirectXPage.xaml.h">
       <DependentUpon>DirectXPage.xaml</DependentUpon>
@@ -260,6 +267,7 @@
     <ClInclude Include="ShaderLoader.h" />
     <ClInclude Include="Shape.h" />
     <ClInclude Include="SpatialTree.h" />
+    <ClInclude Include="StateManager.h" />
     <ClInclude Include="StaticBatch.h" />
     <ClInclude Include="TextureAtlas.h" />
     <ClInclude Include="TextureAtlasLoader.h" />
@@ -276,11 +284,13 @@
     <ClCompile Include="BaseMesh.cpp" />
     <ClCompile Include="BasicVertex.cpp" />
     <ClCompile Include="BezierCurve.cpp" />
+    <ClCompile Include="BlendStateCache.cpp" />
     <ClCompile Include="BundleLoader.cpp" />
     <ClCompile Include="BundleManager.cpp" />
     <ClCompile Include="Circle.cpp" />
     <ClCompile Include="Color.cpp" />
     <ClCompile Include="Common\DeviceResources.cpp" />
+    <ClCompile Include="ConstantBufferCache.cpp" />
     <ClCompile Include="DXContext.cpp" />
     <ClCompile Include="DynamicBatcher.cpp" />
     <ClCompile Include="Intersection.cpp" />
@@ -291,7 +301,9 @@
     <ClCompile Include="Polygon.cpp" />
     <ClCompile Include="Ray.cpp" />
     <ClCompile Include="Rect.cpp" />
+    <ClCompile Include="RenderTargetCache.cpp" />
     <ClCompile Include="ResourceLoader.cpp" />
+    <ClCompile Include="SamplerCache.cpp" />
     <ClCompile Include="SBEditorMain.cpp" />
     <ClCompile Include="DirectXPage.xaml.cpp">
       <DependentUpon>DirectXPage.xaml</DependentUpon>
@@ -308,6 +320,7 @@
     <ClCompile Include="ShaderLoader.cpp" />
     <ClCompile Include="Shape.cpp" />
     <ClCompile Include="SpatialTree.cpp" />
+    <ClCompile Include="StateManager.cpp" />
     <ClCompile Include="StaticBatch.cpp" />
     <ClCompile Include="TextureAtlas.cpp" />
     <ClCompile Include="TextureAtlasLoader.cpp" />

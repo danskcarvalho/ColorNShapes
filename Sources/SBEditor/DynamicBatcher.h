@@ -34,7 +34,9 @@ namespace sb {
 	class DynamicBatcher {
 	public:
 		//Constructor
-		DynamicBatcher(const DXContext* ctx, const LayoutBuilder* layoutBuilder, DrawFrequency frequency = DrawFrequency::Default);
+		DynamicBatcher(const DXContext* ctx, 
+					   const LayoutBuilder* layoutBuilder, 
+					   DrawFrequency frequency = DrawFrequency::Default);
 		~DynamicBatcher();
 		//Drawing
 		template<class Model, class Instance = NullMesh>

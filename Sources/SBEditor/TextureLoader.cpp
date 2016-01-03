@@ -52,7 +52,7 @@ ResourceLoaderTask TextureLoader::load() {
 
 	return txBytes.then([=](const std::vector<byte>& fileData) {
 		DX::ThrowIfFailed(
-			CreateWICTextureFromMemory(
+			DirectX::CreateWICTextureFromMemory(
 				ctx->device(),
 				ctx->deviceContext(),
 				fileData.data(),

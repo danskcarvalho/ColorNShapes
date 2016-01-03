@@ -161,6 +161,30 @@
     <ClInclude Include="TextureAtlas.h">
       <Filter>Graphics</Filter>
     </ClInclude>
+    <ClInclude Include="LinearCache.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="SamplerCache.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectXHelpers.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="PlatformHelpers.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="BlendStateCache.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderTargetCache.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstantBufferCache.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="StateManager.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="App.xaml.cpp" />
@@ -256,6 +280,21 @@
       <Filter>Graphics\SRC</Filter>
     </ClCompile>
     <ClCompile Include="TextureAtlas.cpp">
+      <Filter>Graphics\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="SamplerCache.cpp">
+      <Filter>Graphics\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="BlendStateCache.cpp">
+      <Filter>Graphics\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderTargetCache.cpp">
+      <Filter>Graphics\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstantBufferCache.cpp">
+      <Filter>Graphics\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="StateManager.cpp">
       <Filter>Graphics\SRC</Filter>
     </ClCompile>
   </ItemGroup>
